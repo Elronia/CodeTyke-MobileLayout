@@ -5,6 +5,10 @@
 .learningModule {
     &__header {
         text-align: center;
+        
+        @media (max-width: $mobile) {
+            text-align: left;
+        }
     }
 
     &__title {
@@ -12,11 +16,18 @@
         color: $morning-sky;
         font-weight: 600;
         font-size: 1.5em;
+
+        @media (max-width: $mobile) {
+            margin: 0 30px;
+        }
     }
 
     &__subHeader{
         @include subheader;
         min-height: 42px;
+        @media (max-width: $mobile) {
+            display: none;
+        }
     }
   
     &__answerArea {
@@ -28,6 +39,8 @@
         justify-content: center;
         @media only screen and (max-width: $tablet) {
             border-radius: unset;
+            background-color: transparent;
+            box-shadow: none;
         }
 
     }
@@ -37,12 +50,31 @@
         display: grid;
         grid-auto-flow: column;
         grid-gap: 10px;
+
+        @media (max-width: $tablet) {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: $mobile) {
+            .selectionBox {
+                text-align: left;
+                &__text {
+                    margin-left: 20px;
+                }
+            }
+        }
     }
 
     &__submitButtonContainer {
         height: 50px;
         .submitButton {
             float: right;
+        }
+
+        @media (max-width: $mobile) {
+            .submitButton {
+                float: none;
+            }
         }
     }
 }

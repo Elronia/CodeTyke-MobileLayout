@@ -1,6 +1,13 @@
+@import '../../styles/utils/breakpoints';
+
 #navbarContainer{
   height: 50px;
   background: black;
+  
+  @media (max-width: $mobile) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 #navbarContent{
